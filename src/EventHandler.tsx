@@ -5,7 +5,7 @@ import DataTable from "./DataTable";
 import * as XLSX from "xlsx";
 import { firestore } from "./firebase";
 import { collection, addDoc } from "firebase/firestore";
-import { Upload } from "@mui/icons-material";
+import ErrorBoundary from "./ErrorBoundary";
 
 const ExcelUploader: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -40,6 +40,7 @@ const ExcelUploader: React.FC = () => {
             setShowLoader(false);
           } catch (error) {
             alert(`Error adding document to Firestore: ${error}`);
+            console.error("Error adding document to Firestore:", error);
             setShowLoader(false);
           }
         }
@@ -56,16 +57,7 @@ const ExcelUploader: React.FC = () => {
           onChange={handleFileChange}
           accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
         />
-        <Button
-          variant="contained"
-          onClick={handleUpload}
-          sx={{
-            borderRadius: 20,
-            padding: "10px 20px",
-            fontWeight: "bold",
-            width: "120px",
-          }}
-        >
+        <Button variant="contained" onClick={handleUpload}>
           {showLoader ? (
             <CircularProgress color="warning" size={20} />
           ) : (
@@ -73,7 +65,11 @@ const ExcelUploader: React.FC = () => {
           )}
         </Button>
       </div>
-      {uploadedData.length > 0 && <DataTable data={uploadedData} />}
+      {uploadedData.length > 0 && (
+        <ErrorBoundary>
+          <DataTable data={uploadedData} />
+        </ErrorBoundary>
+      )}
     </>
   );
 };

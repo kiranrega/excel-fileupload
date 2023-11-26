@@ -11,7 +11,7 @@ import {
   TablePagination,
 } from "@mui/material";
 
-const DataTable: React.FC<{ data: any[] }> = ({ data }) => {
+const DataTable: React.FC<{ data: any[] }> = React.memo(({ data }) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [searchTerm, setSearchTerm] = useState("");
@@ -94,6 +94,6 @@ const DataTable: React.FC<{ data: any[] }> = ({ data }) => {
       />
     </div>
   );
-};
+});
 
 export default DataTable;

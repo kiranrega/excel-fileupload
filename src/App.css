@@ -15,3 +15,9 @@ input::file-selector-button {
   gap: 20px;
   align-items: center;
 }
+.MuiButton-root {
+  border-radius: 20px !important;
+  padding: 10px 20px;
+  font-weight: bold;
+  width: 120px;
+}
