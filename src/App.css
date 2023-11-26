@@ -1,0 +1,17 @@
+input::file-selector-button {
+  font-weight: bold;
+  color: #455d7a;
+  padding: 10px;
+  border: thin solid grey;
+  border-radius: 20px;
+}
+
+.MuiInputBase-root {
+  border-radius: 20px;
+}
+
+.upload-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
