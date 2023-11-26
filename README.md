@@ -1,30 +1,18 @@
-# React + TypeScript + Vite
+# Excel File Upload to Firebase Firestore with React and TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React application built with TypeScript and Vite that facilitates the upload of Excel files to Firebase Firestore. It includes a DataTable component for displaying the uploaded data, complete with search functionality.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Excel File Upload:** Easily upload Excel files to Firebase Firestore using the provided interface.
+- **Firebase Firestore Integration:** Stored data is seamlessly integrated into Firebase Firestore for efficient data management.
+- **Search Functionality:** Utilize the search bar to filter and find specific data within the displayed DataTable.
+- **Vite and React:** The project is set up with Vite and React for fast development and a modern development experience.
 
-## Expanding the ESLint configuration
+## Usage
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Install the necessary dependencies:
+   npm install
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2: To start project:
+  npm run dev
