@@ -14,5 +14,5 @@ This project is a React application built with TypeScript and Vite that facilita
 1. Install the necessary dependencies:
    npm install
 
-2: To start project:
+2. To start project:
   npm run dev
