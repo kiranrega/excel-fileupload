@@ -16,7 +16,7 @@ const DataTable: React.FC<{ data: any[] }> = React.memo(({ data }) => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleChangePage = (event: unknown, newPage: number) => {
+  const handleChangePage = (_event: any, newPage: number) => {
     setPage(newPage);
   };
 
@@ -73,7 +73,7 @@ const DataTable: React.FC<{ data: any[] }> = React.memo(({ data }) => {
           <TableBody>
             {slicedData.map((row, rowIndex) => (
               <TableRow key={rowIndex}>
-                {Object.values(row).map((value, columnIndex) => (
+                {Object.values(row).map((value: any, columnIndex: number) => (
                   <TableCell key={columnIndex}>{value}</TableCell>
                 ))}
               </TableRow>

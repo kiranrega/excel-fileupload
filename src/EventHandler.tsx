@@ -1,6 +1,5 @@
-// src/components/ExcelUploader.tsx
 import React, { ChangeEvent, useState } from "react";
-import { Button, Input, CircularProgress } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 import DataTable from "./DataTable";
 import * as XLSX from "xlsx";
 import { firestore } from "./firebase";
@@ -34,7 +33,7 @@ const ExcelUploader: React.FC = () => {
 
           try {
             const collectionRef = collection(firestore, "excel");
-            const docRef = await addDoc(collectionRef, { data: excelData });
+            await addDoc(collectionRef, { data: excelData });
 
             setUploadedData(excelData);
             setShowLoader(false);
